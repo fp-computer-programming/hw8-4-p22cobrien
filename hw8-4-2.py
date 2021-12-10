@@ -33,17 +33,24 @@ def rock_paper_scissors():
             print("You win, scissors cuts paper!\n")
             return "win"
 
-
 win = 0
 loss = 0
 tie = 0
-game = 0
+games = 0
+
 
 while True:
+
     play = str.capitalize(input("Do you want to play? Y or N "))
     if play == "Y":
-        
-    if play == "N":
+        games += 1
+        results = rock_paper_scissors()
+        if results == "win":
+            win += 1
+        elif results == "loss":
+            loss +=1
+        elif results == "tie":
+            tie += 1
+    elif play == "N":
+        print("Out of {3} games played, you have won {0} games, lost {1} games, and tied {2}.".format(win, loss, tie, games))
         break
-
-# 
